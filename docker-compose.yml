@@ -1,0 +1,12 @@
+services:
+  wiki_extract:
+    build: .
+    tty: true
+    volumes:
+      - ./dumps:/data:ro
+      - ./out:/out
+      - .:/app
+    # 起動: docker compose up -d
+    # ローカルのソース変更がコンテナ内にリアルタイム反映（.:/app でマウント）
+    # 中に入る: docker compose exec wiki_extract bash
+    # 中で実行: uv run python -m wiki_extract（または外から exec ... uv run python -m wiki_extract）

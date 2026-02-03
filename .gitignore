@@ -1,0 +1,30 @@
+# ダンプ・出力（大容量のためリポジトリに含めない）
+dumps/
+out/
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# uv
+.uv/
+
+# テスト・カバレッジ
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE・OS
+.cursor/
+.DS_Store
+*.log

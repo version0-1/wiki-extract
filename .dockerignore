@@ -1,0 +1,29 @@
+# ダンプ・出力（マウントするためビルドに含めない）
+dumps/
+out/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# uv
+.uv/
+
+# 開発・IDE
+.git/
+.gitignore
+.cursor/
+*.md
+!README.md
+
+# テスト・一時
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.DS_Store
