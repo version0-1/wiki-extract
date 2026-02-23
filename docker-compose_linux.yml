@@ -1,0 +1,5 @@
+# docker-compose.yml とマージして使う: -f docker-compose.yml -f docker-compose_linux.yml
+# Linux でホストの Ollama (localhost:11434) に接続するため network_mode: host を追加
+services:
+  wiki_extract:
+    network_mode: host

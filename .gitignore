@@ -2,6 +2,11 @@
 dumps/
 out/
 
+# 秘密情報（API キーなどは .env に書き、コミットしない）
+.env
+.env.local
+.env.*.local
+
 # Python
 .venv/
 venv/

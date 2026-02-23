@@ -1,3 +1,5 @@
 """日本語Wikipediaダンプから架空の人物名を抽出する。"""
 
-__version__ = "0.1.0"
+from importlib.metadata import version
+
+__version__ = version("wiki-extract")

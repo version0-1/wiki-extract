@@ -7,8 +7,8 @@ WORKDIR /app
 RUN pip install --no-cache-dir uv
 
 # 依存は pyproject.toml で管理し、コンテナ内の uv でインストール
-# wiki_extract を先にコピーしないと hatchling がパッケージを見つけられない
-COPY pyproject.toml uv.lock* ./
+# hatchling がパッケージと README を参照するため、必要なファイルをコピーしてから sync
+COPY pyproject.toml uv.lock* README.md ./
 COPY wiki_extract/ ./wiki_extract/
 # mwparserfromhell の C 拡張をビルドしない（slim に gcc なし → 純 Python トークナイザー）
 ENV WITH_EXTENSION=0
