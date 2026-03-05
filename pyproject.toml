@@ -1,6 +1,6 @@
 [project]
 name = "wiki-extract"
-version = "0.1.0"
+version = "0.1.1"
 description = "Extract fictional character names from Japanese Wikipedia dumps"
 requires-python = ">=3.10"
 license = "MIT"

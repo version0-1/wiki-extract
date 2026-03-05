@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 
 from wiki_extract.extract.section_parser import extract_toujo_section
+from wiki_extract.extract.sql_page import TOUJO_PATTERN
 from wiki_extract.util.log import format_elapsed, log, log_progress, Timer
 
 
@@ -1994,7 +1995,10 @@ def main() -> None:
                 log(f'  スキップ {path.name}: 読み込みエラー {e}')
                 continue
 
-            is_toujo = page_id in toujo_page_ids
+            # 登場人物専用ページ: toujo_page_ids に含まれるか、タイトルが「○○の登場人物（一覧）」なら本文全体から抽出
+            is_toujo = page_id in toujo_page_ids or bool(
+                TOUJO_PATTERN.match(page_title.replace(' ', '_'))
+            )
             if is_toujo:
                 names = get_names_for_toujo_page(text)
             else:
